@@ -46,7 +46,8 @@ fh = open(file_name, 'w') #fh = file handler
 
 decrypted_plaintext = decrypt(plaintext, key)
 
-fh.write(f'Ciphertext: {plaintext}')
+fh.write(f'Ciphertext: {plaintext}\n')
+fh.write(f'Key: {key}\n')
 fh.write(f'Decrypted Plaintext: {decrypted_plaintext}')
 
 fh.close()
