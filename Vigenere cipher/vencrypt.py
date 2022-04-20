@@ -1,4 +1,4 @@
-def _pad_key(plaintext, key):     #creating pad key
+def _pad_key(plaintext, key):
     padded_key = ''
     i = 0
     for char in plaintext:
@@ -9,7 +9,7 @@ def _pad_key(plaintext, key):     #creating pad key
             padded_key += ' '
     return padded_key
 
-def _encrypt_decrypt_char(plaintext_char, key_char, mode='encrypt'):      #encypting and decrypting based on mode
+def _encrypt_decrypt_char(plaintext_char, key_char, mode='encrypt'):
     if plaintext_char.isalpha():
         first_alphabet_letter = 'a'
         if plaintext_char.isupper():
@@ -25,14 +25,14 @@ def _encrypt_decrypt_char(plaintext_char, key_char, mode='encrypt'):      #encyp
         return chr(new_char_position + ord(first_alphabet_letter))
     return plaintext_char
 
-def encrypt(plaintext, key):          #encryption function
+def encrypt(plaintext, key):
     ciphertext = ''
     padded_key = _pad_key(plaintext, key)
     for plaintext_char, key_char in zip(plaintext, padded_key):
         ciphertext += _encrypt_decrypt_char(plaintext_char, key_char)
     return ciphertext
 
-def decrypt(ciphertext, key):         #decryption function
+def decrypt(ciphertext, key):
     plaintext = ''
     padded_key = _pad_key(ciphertext, key)
     for ciphertext_char, key_char in zip(ciphertext, padded_key):
@@ -48,6 +48,7 @@ fh = open(file_name, 'w') #fh = file handler
 ciphertext = encrypt(plaintext, key)
 
 fh.write(f'Plaintext: {plaintext}\n')
+fh.write(f'Key: {key}\n')
 fh.write(f'Ciphertext: {ciphertext}')
 
 fh.close()
