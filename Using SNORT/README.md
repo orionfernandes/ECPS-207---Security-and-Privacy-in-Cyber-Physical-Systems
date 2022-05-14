@@ -2,3 +2,8 @@ Use Snort (Links to an external site.) to log any messages to them received from
 
 Submit two files, 1) the log file that contains the packet information, and
  2) a text file containing the Snort alert rule which you defined in order to log the packets.
+
+Requirement:
+
+1. npcap 0.9984 - https://npcap.com/dist/
+2. WinPcap_4_1_3 - https://www.winpcap.org/default.htm
